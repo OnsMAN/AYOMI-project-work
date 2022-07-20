@@ -1,0 +1,42 @@
+<html lang="en">
+    <head>
+        <title>display</title>
+    </head>
+        <div class="one">
+            <div class="two">
+                <ul>
+                    <li><a href="{{url_for('index')}}">Index</a></li>
+                    <li class="active"><a href="{{url_for('display')}}">Display</a></li>
+                    <li><a href="{{url_for('update')}}">Update</a></li>
+                    <li><a href="{{url_for('logout')}}">Log out</a></li>
+                </ul>
+            </div>
+            <div class="content" align="center">
+                <div class="topbar">
+                </div>  </br>
+                <div class="contentbar">
+                    <h1>User infos</h1>    </br>
+                     {% block content %}
+                        <div class="border">
+                            <table class="worddark"></br></br></br></br>
+                                <tr>
+                                    <td>Username:</td>
+                                    <td>{{ session['username'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Password:</td>
+                                    <td>{{ session['password'] }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Email ID:</td>
+                                    <td>{{ session['email'] }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    {% endblock %}
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
